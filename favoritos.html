@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Favoritos</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <a href="index.html">
+        <img src="img/logo.png" alt="Logo de la empresa" class="logo">
+  </a>
+  <div class="icons">
+    <a href="login.html" id="login-btn">👤 Iniciar sesión</a>
+    <span id="user-name" style="display:none;"></span>
+    <button id="logout-btn" style="display:none;">Salir</button>
+
+    <a href="carrito.html">🛒 <span id="cart-count">0</span></a>
+    <a href="index.html">Inicio 🏠</a>
+  </div>
+</header>
+
+<main class="container">
+  <section class="products" id="fav-items"></section>
+</main>
+
+<script src="js/favoritos.js"></script>
+<script src="js/user.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="logo">💳 Checkout</div>
+  <a href="index.html">⬅ Volver</a>
+</header>
+
+<center style="padding:40px;">
+
+  <h2>Finalizar compra</h2>
+
+  <input id="nombre" placeholder="Nombre completo"><br><br>
+  <input id="direccion" placeholder="Dirección"><br><br>
+  <input id="correo" placeholder="Correo electrónico"><br><br>
+
+  <h3>Método de pago</h3>
+
+  <select id="metodoPago">
+    <option value="">-- Selecciona --</option>
+    <option value="tarjeta">Tarjeta 💳</option>
+    <option value="paypal">PayPal 🅿</option>
+  </select>
+
+  <br><br>
+
+  <div id="tarjetaBox" style="display:none;">
+    <h3>Datos tarjeta</h3>
+    <input id="numeroTarjeta" placeholder="Número tarjeta"><br><br>
+    <input id="cvvTarjeta" placeholder="CVV"><br><br>
+  </div>
+
+  <div id="paypalBox" style="display:none;">
+    <h3>Cuenta PayPal</h3>
+    <input id="correoPaypal" placeholder="Correo PayPal"><br><br>
+  </div>
+
+  <button id="btnPagar">Confirmar pago 💖</button>
+
+</center>
+
+<script src="js/checkout.js"></script>
+</body>
+</html>

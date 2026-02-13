@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MakeupStore</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <a href="index.html">
+      <img src="img/logo.png" alt="Logo de la empresa" class="logo">
+  </a>
+   
+  <div class="search-container">
+    <input type="text" id="search" placeholder="Buscar producto..." class="buscar">
+    <select id="sort" class="filtro">
+      <option value="default">Ordenar por...</option> 
+      <option value="az">Nombre A-Z</option>
+      <option value="za">Nombre Z-A</option>
+      <option value="precioAsc">Precio menor</option>
+      <option value="precioDesc">Precio mayor</option>
+    </select>
+  </div>
+
+  <div class="icons">
+    <a href="favoritos.html">❤️ <span id="fav-count">0</span></a>
+    <a href="carrito.html">🛒 <span id="cart-count">0</span></a>
+
+    <a href="login.html" id="login-btn">👤 Iniciar sesión</a>
+
+    <div id="user-menu" class="dropdown" style="display: none;">
+        <button class="dropbtn">
+            <span id="user-name"></span> <i class="arrow">▼</i>
+        </button>
+        <div class="dropdown-content">
+            <a href="perfil.html">👤 Mi Perfil</a>
+            <a href="pedidos.html">📦 Mis Pedidos</a>
+            <hr>
+            <button id="logout-btn" class="logout-link">Cerrar Sesión</button>
+        </div>
+    </div>
+</div>
+</header>
+
+
+<!-- ✅ SLIDER PRINCIPAL -->
+ <section class="slider">
+
+  <button class="prev" onclick="prevSlide()">◀</button>
+
+  <div class="slides">
+    <img src="img/slider1.jpg" class="slide active">
+    <img src="img/slider2.jpg" class="slide">
+    <img src="img/slider3.jpg" class="slide">
+  </div>
+
+  <button class="next" onclick="nextSlide()">▶</button>
+
+</section>
+ <!--mas vendido-->
+<section id="best-sellers" class="best-section">
+  <h2>Lo Más Vendido 🔥</h2><br><br>
+  <div class="products" id="best-products"></div>
+</section>
+<!--look-->
+<section class="look-section">
+  <div class="look-content">
+    <div class="look-text">
+      <h2>THE ICONIC LOOK</h2>
+      <p>Un maquillaje que ilumina, define y empodera. Diseñado para destacar tu esencia.</p>
+      <button class="btn-look" onclick="openLook()">Recrear look</button>
+    </div>
+    <div class="look-image">
+      <img src="img/modelo.jpg" alt="Modelo maquillaje Luxe">
+    </div>
+  </div>
+</section>
+
+<!--banner-->
+<section class="banner">
+  <h1>LUXE</h1>
+  <p class="slogan">Define tu belleza. Domina tu luz.</p>
+  <button class="btn-hero" onclick="window.scrollTo({top:700,behavior:'smooth'})">
+    Explorar colección
+  </button>
+
+  <section class="category-menu">
+  <button onclick="filterCategory('all')">Todos</button>
+  <button onclick="filterCategory('labial')">Labios</button>
+  <button onclick="filterCategory('sombra')">Sombras</button>
+  <button onclick="filterCategory('Ojos')">Ojos</button>
+  <button onclick="filterCategory('Accesorios')">Accesorios</button>
+  <button onclick="filterCategory('base')">Bases</button>
+  <button onclick="filterCategory('corrector')">Correctores</button>
+  </section>
+
+  <section class="products" id="product-list"></section>
+
+
+
+<div id="toast" class="toast"></div>
+
+<script src="js/script.js"></script>
+<script src="js/slider.js"></script>
+<script src="js/user.js"></script>
+
+<div id="quickModal" class="quick-modal">
+  <div class="quick-content">
+    <span onclick="closeQuickView()" class="close">&times;</span>
+    <div id="quick-body"></div>
+  </div>
+</div>
+<!--look-->
+<div id="lookModal" class="look-modal">
+  <div class="look-modal-content">
+    <span class="close-look" onclick="closeLook()">×</span>
+    <h2>Recrea el Iconic Look</h2>
+    <div id="look-products" class="products"></div>
+    <button class="btn-look" onclick="completeLook()">
+      Añadir todo al carrito
+    </button>
+  </div>
+</div>
+
+</body>
+</html>
